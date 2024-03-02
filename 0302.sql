@@ -11,3 +11,18 @@ CREATE TABLE IF NOT EXISTS city(id SERIAL PRIMARY KEY,name VARCHAR(30),	populati
 
 SELECT *
 FROM city;
+
+CREATE TABLE IF NOT EXISTS invoices(
+	id SERIAL PRIMARY KEY,
+	客戶id INT,
+	日期 DATE,
+	地址 VARCHAR(100),
+	城市 VARCHAR(20),
+	州 VARCHAR(10),
+	國家 VARCHAR(20),
+	郵遞區號 VARCHAR(20),
+	金額 real
+);
+
+SELECT *
+FROM invoices;
