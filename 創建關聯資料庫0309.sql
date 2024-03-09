@@ -30,6 +30,7 @@ WHERE 客戶_id=1
 
 
 
-/*預設是不能刪除要刪要再新增delete指令保持資料一致性*/
+/*預設是不能刪除要刪要再新增delete指令*/
+/*FOREIGN KEY目的保持資料一致性*/
 FOREIGN KEY(哪個欄位名稱)
 REFERENCES 哪個表格(哪個欄位名稱)
