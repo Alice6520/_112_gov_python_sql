@@ -1,3 +1,5 @@
+/*關聯性要刪除注意前後順序*/
+DROP TABLE IF EXISTS 聯絡人
 DROP TABLE IF EXISTS 客戶
 
 CREATE TABLE IF NOT EXISTS 客戶(客戶_id SERIAL,
@@ -10,7 +12,8 @@ CREATE TABLE IF NOT EXISTS 聯絡人(聯絡人id SERIAL,客戶id INT,
 							   電話 VARCHAR(15),
 							  郵件 VARCHAR (100),
 							  PRIMARY KEY(聯絡人id),
-							  FOREIGN KEY(客戶id)REFERENCES 客戶(客戶_id));
+							  FOREIGN KEY(客戶id)REFERENCES 客戶(客戶_id))
+							  ON DELETE SET NULL);
 INSERT INTO 客戶(客戶名稱)
 VALUES ('遠傳電信'),
        ('台灣大車隊');
@@ -30,5 +33,3 @@ WHERE 客戶_id=1
 /*預設是不能刪除要刪要再新增delete指令保持資料一致性*/
 FOREIGN KEY(哪個欄位名稱)
 REFERENCES 哪個表格(哪個欄位名稱)
-
-
